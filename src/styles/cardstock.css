@@ -1,0 +1,32 @@
+/* Fine, evenly distributed fibers of uncoated cardstock.
+   A single high-frequency octave avoids the old cloudy, multi-scale noise.
+   Keep texture in the paper/printed surfaces, never over photographs. */
+:root {
+  --cardstock-grain: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22240%22%20viewBox%3D%220%200%20240%20240%22%3E%3Cfilter%20id%3D%22paper%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%22.72%20.96%22%20numOctaves%3D%221%22%20seed%3D%2217%22%20stitchTiles%3D%22stitch%22%2F%3E%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220%200%200%200%20.36%200%200%200%200%20.30%200%200%200%200%20.23%200%200%200%201%200%22%2F%3E%3CfeComponentTransfer%3E%3CfeFuncA%20type%3D%22table%22%20tableValues%3D%220%20.075%22%2F%3E%3C%2FfeComponentTransfer%3E%3C%2Ffilter%3E%3Cpath%20d%3D%22M0%200h240v240H0z%22%20filter%3D%22url(%23paper)%22%2F%3E%3Cpath%20d%3D%22m17%2024%202%20.4m39%2038%201.2-1.5m123-18%202.7.2m-139%20143%202.5.8m76-80%201.6%201.2m89%2093%202.4-.5m-126%2018%202%20.6m-59-118%20.9%202m167%2026%202.5.4m-138%2028%202.3-.6m106%2017%201.1%201.9m-59%2057%202.4-.3m-104-87%201.5%201.5m176-34%202.6.7m-80-93%201.8-.4m27%20146%201.6-1.4%22%20fill%3D%22none%22%20stroke%3D%22%23806f5e%22%20stroke-width%3D%22.35%22%20stroke-linecap%3D%22round%22%20opacity%3D%22.045%22%2F%3E%3C%2Fsvg%3E");
+}
+
+body::after {
+  content: none;
+  display: none;
+}
+
+body,
+.site-header,
+.hero-color,
+.site-menu,
+.next-section,
+.site-footer,
+.cover-divider {
+  background-image: var(--cardstock-grain);
+  background-size: 240px 240px;
+  background-repeat: repeat;
+}
+
+/* These paper surfaces live inside components with scoped background rules. */
+body .dish-gallery .gallery-placeholder,
+body .category-picker .category-options {
+  background-image: var(--cardstock-grain);
+  background-size: 240px 240px;
+  background-repeat: repeat;
+}
+

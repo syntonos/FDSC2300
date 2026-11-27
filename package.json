@@ -1,0 +1,33 @@
+{
+  "name": "fdsc2300",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.12.0" },
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 3000",
+    "build": "npm run check && vite build && tsx scripts/build-routes.ts",
+    "preview": "vite preview --host 0.0.0.0 --port 3000",
+    "check": "tsc --noEmit && tsx scripts/validate-content.ts",
+    "test": "tsx --test tests/*.test.ts",
+    "preview:file": "npm run build && node scripts/create-preview.mjs"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.9.5",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "yaml": "^2.8.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@types/node": "^24.10.0",
+    "@vitejs/plugin-react": "^5.1.0",
+    "vite": "^7.2.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}
