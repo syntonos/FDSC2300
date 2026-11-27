@@ -83,3 +83,18 @@ main:focus { outline: none; }
   .resource-content, .notes-index { font-size: 15px; }
   .resource-content .prose, .notes-page .page-heading .prose { font-size: 15px; }
 }
+
+.document-preview > button {
+  margin-inline-start: .75em;
+  padding: .2em .6em;
+  border: 1px solid currentColor;
+  background: transparent;
+  color: var(--rust);
+}
+.document-preview iframe {
+  display: block;
+  width: 100%;
+  height: clamp(320px, 70svh, 760px);
+  margin-block: .75rem 1rem;
+  border: 1px solid var(--line);
+}

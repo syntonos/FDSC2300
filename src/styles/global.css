@@ -197,14 +197,13 @@ html::-webkit-scrollbar-thumb:hover, .site-menu::-webkit-scrollbar-thumb:hover, 
 .site-menu nav a small { font-size: 11px; }
 .menu-bottom p.menu-contacts { overflow-wrap: anywhere; }
 .menu-toggle { display: grid; place-items: center; width: 48px; height: 48px; min-height: 48px; padding: 0; }
-.menu-icon { width: 42px; height: 42px; gap: 5px; }
-.menu-icon i { width: 17px; }
+.menu-icon { width: 44px; height: 44px; border: 0; border-radius: 0; gap: 5px; }
+.menu-icon i { width: 30px; height: 3px; border-radius: 2px; }
+.menu-toggle:hover .menu-icon { background: transparent; color: inherit; opacity: .75; }
 .site-menu { inset: 0 auto 0 0; transform: translateX(-101%); overflow-y: auto; overscroll-behavior: contain; }
 .menu-open .site-menu { transform: translateX(0); }
 .cover-menu-toggle { position: absolute; top: 8px; left: 12px; z-index: 6; color: var(--paper); }
-.cover-menu-toggle .menu-icon { border-color: #f4f0e799; }
 .cover-menu-toggle .menu-label { font-size: 9px; letter-spacing: 1.6px; text-transform: uppercase; }
-.cover-menu-toggle:hover .menu-icon { background: var(--paper); color: var(--rust); }
 .hero-topline { top: 26px; font-size: 11px; }
 .hero-topline > span:first-child { margin-left: 140px; }
 .menu-bottom { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 30px; align-items: end; }
