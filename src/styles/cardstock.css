@@ -31,11 +31,11 @@ body .category-picker .category-options {
 }
 
 
-/* A soft highlight adds sheen to the burgundy paper surfaces. */
+/* A soft highlight adds sheen to the warm red paper surfaces. */
 .hero-color,
 .site-menu,
 .site-footer {
-  background-image: var(--cardstock-grain), linear-gradient(145deg, #f5a58b1f, transparent 55%, #26061033);
+  background-image: var(--cardstock-grain), linear-gradient(145deg, #ffb7880c, transparent 55%, #2b090c24);
   background-size: 240px 240px, 100% 100%;
   background-repeat: repeat, no-repeat;
 }
