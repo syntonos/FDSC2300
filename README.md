@@ -73,12 +73,6 @@ Edit `content/pages/home.md` for cover words, section headings, the About paragr
 
 Submit and Instagram are direct external links. Their `externalUrl` fields live in `content/pages/submit.md` and `instagram.md`; they currently point to the services' general homepages as placeholders. Replace them with the actual Google Form and class profile. No API keys or passwords are needed.
 
-### Preview course documents
-
-Use standard Markdown links in course pages or notes. Place PDFs in `public/documents/` and link to them as `[Lecture handout](/documents/lecture.pdf)`. Google Slides links use the embedded presentation player. Public HTTPS links to PowerPoint files (`.ppt` or `.pptx`) use the Microsoft Office viewer.
-
-The **Preview here** button loads the viewer on demand. Keep the original link available for browsers without embedded PDF support. Google Slides viewers still need access to the presentation, and the Office viewer needs a publicly reachable file.
-
 ## Add a dish
 
 Copy `templates/dish.md` into `content/dishes/<year>/<dish-name>.md`, then update its frontmatter and body. Files are discovered automatically; no route or navigation code needs editing.
