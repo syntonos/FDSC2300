@@ -9,6 +9,7 @@ description: Browned mince, mushrooms, and onions in a savory reduction.
 technique: Maillard reactions & reduction
 skills: ["Maillard Reactions", "Reduction", "Heat Control"]
 duration: 50 minutes
+ingredients: [Mince, Mushrooms, Onions, Stock, Salt, Black pepper]
 team: FDSC 2300 kitchen
 ---
 

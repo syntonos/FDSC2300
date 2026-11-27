@@ -9,6 +9,7 @@ description: Roasted ribs with a browned crust and fresh thyme.
 technique: Roasting & heat transfer
 skills: ["Heat Transfer", "Maillard Reactions", "Temperature Control"]
 duration: 90 minutes + resting
+ingredients: [Ribs, Fresh thyme, Salt, Black pepper]
 team: FDSC 2300 kitchen
 ---
 

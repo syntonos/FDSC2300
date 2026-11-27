@@ -9,6 +9,7 @@ description: Citrus curd in a crisp, golden pastry shell.
 technique: Custards & coagulation
 skills: ["Protein Coagulation", "Pastry", "Temperature Control"]
 duration: 90 minutes + cooling
+ingredients: [Pastry shell, Citrus juice and zest, Eggs, Sugar, Butter]
 team: FDSC 2300 kitchen
 ---
 

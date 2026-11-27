@@ -10,6 +10,7 @@ description: Salmon with lemon, herbs, and a light sauce.
 technique: Heat & protein coagulation
 skills: ["Heat Transfer", "Protein Coagulation", "Food Safety"]
 duration: 50 minutes
+ingredients: [Salmon fillets, Lemon, Fresh herbs, Stock, Butter, Black pepper]
 team: FDSC 2300 kitchen
 ---
 

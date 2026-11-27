@@ -9,6 +9,7 @@ description: Noodles in broth with shrimp, egg, and vegetables.
 technique: Starch & broth extraction
 skills: ["Starch Gelatinization", "Extraction", "Seasoning"]
 duration: 65 minutes
+ingredients: [Noodles, Broth, Shrimp, Eggs, Snow peas, Sesame seeds, Soy sauce]
 team: FDSC 2300 kitchen
 ---
 

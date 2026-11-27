@@ -9,6 +9,7 @@ description: Blended pumpkin soup with seeds, cheese, and spice.
 technique: Plant structure & purées
 skills: ["Heat Transfer", "Plant Structure", "Puréeing"]
 duration: 55 minutes
+ingredients: [Pumpkin, Stock, Pumpkin seeds, White cheese, Spices, Salt]
 team: FDSC 2300 kitchen
 ---
 

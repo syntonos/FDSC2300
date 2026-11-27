@@ -9,6 +9,7 @@ description: A tender egg on crisp toast with fresh herbs.
 technique: Protein coagulation & toasting
 skills: ["Heat Transfer", "Protein Coagulation", "Toasting"]
 duration: 25 minutes
+ingredients: [Eggs, Bread, Fresh herbs, Salt, Black pepper]
 team: FDSC 2300 kitchen
 ---
 

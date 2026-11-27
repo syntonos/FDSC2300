@@ -9,6 +9,7 @@ description: Golden pancakes with berries, mint, and honey.
 technique: Leavening & batter structure
 skills: ["Leavening", "Starch Gelatinization", "Batter Mixing"]
 duration: 40 minutes
+ingredients: [Flour, Milk, Eggs, Baking powder, Butter, Mixed berries, Fresh mint, Honey]
 team: FDSC 2300 kitchen
 ---
 

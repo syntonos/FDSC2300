@@ -31,8 +31,8 @@ export function HomePage() {
     <div className="cover-divider">{words.map((word, index) => <Fragment key={word}><span>{word}</span>{index < words.length - 1 && <i aria-hidden="true">·</i>}</Fragment>)}</div>
     <section id="about" className="about-section section-pad" data-about-parallax>
       <div className="about-art" data-about-collage>
-        <div className="green-block green-back" data-parallax-layer data-layer-speed="0.24" data-layer-limit="90" data-layer-limit-mobile="62" />
-        <div className="green-block green-front" data-parallax-layer data-layer-speed="-0.16" data-layer-limit="65" data-layer-limit-mobile="46" />
+        <div className="green-block green-back" data-parallax-layer data-layer-speed="0.24" data-layer-speed-x="0.04" data-layer-limit="90" data-layer-limit-mobile="62" />
+        <div className="green-block green-front" data-parallax-layer data-layer-speed="-0.16" data-layer-speed-x="-0.03" data-layer-limit="65" data-layer-limit-mobile="46" />
         <div className="about-photo" data-parallax-layer data-layer-speed="0.07" data-layer-limit="34" data-layer-limit-mobile="24"><img src={assetUrl(home.aboutImage!)} alt={home.aboutImageAlt || 'Seasonal ingredients'} loading="lazy" width={900} height={1100} /></div>
       </div>
       <div className="about-copy"><h2>{home.introTitle || 'About the class.'}</h2><Markdown>{home.body}</Markdown><Link className="text-link" to="/mise-en-place/">Class resources <span>↗</span></Link></div>

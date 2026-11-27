@@ -25,6 +25,7 @@ export const dishSchema = z.object({
   imageInset: z.number().min(0).max(20).default(0), description: z.string(),
   technique: z.string(), skills: z.array(z.string().min(1)).default([]),
   gallery: z.array(studentPhotoSchema).default([]), duration: z.string(), team: z.string(),
+  ingredients: z.array(z.string().min(1)).default([]),
 });
 export const noteSchema = z.object({
   title: z.string().min(1), description: z.string(), category: z.string().min(1),

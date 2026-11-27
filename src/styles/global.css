@@ -165,17 +165,20 @@
 }
 
 /* A slim native scrollbar in the site's rust-and-paper palette. */
-html { scrollbar-width: thin; scrollbar-color: var(--rust) var(--paper); }
-html::-webkit-scrollbar { width: 6px; height: 6px; }
-html::-webkit-scrollbar-track { background: var(--paper); }
-html::-webkit-scrollbar-thumb { background: var(--rust); border-radius: 6px; }
-html::-webkit-scrollbar-thumb:hover { background: var(--deep-rust); }
+html, .site-menu, .category-options { scrollbar-width: thin; scrollbar-color: var(--rust) var(--paper); }
+html::-webkit-scrollbar, .site-menu::-webkit-scrollbar, .category-options::-webkit-scrollbar { width: 3px; height: 3px; }
+html::-webkit-scrollbar-track, .site-menu::-webkit-scrollbar-track, .category-options::-webkit-scrollbar-track { background: var(--paper); }
+html::-webkit-scrollbar-thumb, .site-menu::-webkit-scrollbar-thumb, .category-options::-webkit-scrollbar-thumb { background: var(--rust); border-radius: 6px; }
+html::-webkit-scrollbar-thumb:hover, .site-menu::-webkit-scrollbar-thumb:hover, .category-options::-webkit-scrollbar-thumb:hover { background: var(--deep-rust); }
+@supports selector(::-webkit-scrollbar) {
+  html, .site-menu, .category-options { scrollbar-width: auto; scrollbar-color: auto; }
+}
 @media (max-width: 760px) {
-  html, body { scrollbar-width: none; }
-  html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; height: 0; }
+  html, body, .site-menu, .category-options { scrollbar-width: none; }
+  html::-webkit-scrollbar, body::-webkit-scrollbar, .site-menu::-webkit-scrollbar, .category-options::-webkit-scrollbar { display: none; width: 0; height: 0; }
 }
 @media (forced-colors: active) {
-  html { scrollbar-color: auto; }
+  html, .site-menu, .category-options { scrollbar-color: auto; }
 }
 
 /* Each physical layer moves at its own scroll rate, including the photo frame. */
@@ -185,14 +188,16 @@ html::-webkit-scrollbar-thumb:hover { background: var(--deep-rust); }
 }
 
 /* The menu begins at the left edge, with a light control over the cover. */
-.site-header .header-center { margin-left: 0; }
+:root { --nav-gutter: clamp(24px, 4vw, 64px); }
+.site-header { padding-inline: var(--nav-gutter); }
+.site-header .header-center { position: absolute; left: 50%; transform: translateX(-50%); margin-left: 0; white-space: nowrap; }
 .site-header .wordmark { text-align: right; }
-.menu-toggle { padding: 0; min-height: 44px; gap: 14px; }
-.menu-icon { width: 42px; height: 42px; gap: 4px; }
+.menu-toggle { display: grid; place-items: center; width: 48px; height: 48px; min-height: 48px; padding: 0; }
+.menu-icon { width: 42px; height: 42px; gap: 5px; }
 .menu-icon i { width: 17px; }
 .site-menu { inset: 0 auto 0 0; transform: translateX(-101%); overflow-y: auto; overscroll-behavior: contain; }
 .menu-open .site-menu { transform: translateX(0); }
-.cover-menu-toggle { position: absolute; top: 20px; left: 3.4%; z-index: 6; color: var(--paper); }
+.cover-menu-toggle { position: absolute; top: 22px; left: var(--nav-gutter); z-index: 6; color: var(--paper); }
 .cover-menu-toggle .menu-icon { border-color: #f4f0e799; }
 .cover-menu-toggle .menu-label { font-size: 9px; letter-spacing: 1.6px; text-transform: uppercase; }
 .cover-menu-toggle:hover .menu-icon { background: var(--paper); color: var(--rust); }
@@ -202,8 +207,25 @@ html::-webkit-scrollbar-thumb:hover { background: var(--deep-rust); }
 .cornell-logo { display: block; max-width: 260px; margin-bottom: 22px; }
 .cornell-logo img { width: 100%; height: auto; object-fit: contain; object-position: left center; }
 .menu-bottom .menu-university > p { font-family: var(--sans); font-size: 10px; font-style: normal; letter-spacing: .3px; line-height: 1.8; }
+@media (min-width: 761px) {
+  .site-menu {
+    display: grid;
+    grid-template-rows: auto minmax(min-content, 1fr) auto;
+    gap: clamp(16px, 3dvh, 28px);
+    max-height: 100dvh;
+    padding: clamp(18px, 3dvh, 32px) clamp(32px, 4.5vw, 72px) clamp(22px, 4dvh, 40px);
+  }
+  .site-menu nav { align-self: center; margin: 0; padding: 0; }
+  .site-menu nav a { padding-block: clamp(4px, .7dvh, 10px); }
+  .site-menu nav a span { font-size: clamp(34px, min(4.8vw, 7dvh), 80px); line-height: 1.1; }
+  .menu-top, .menu-bottom { min-width: 0; }
+  .menu-bottom { gap: 24px; }
+  .menu-bottom .menu-university > p { line-height: 1.6; }
+  .menu-bottom p.menu-contacts { font-size: clamp(15px, min(1.5vw, 2.2dvh), 20px); }
+  .cornell-logo { width: clamp(160px, 14vw, 240px); max-width: 100%; margin-bottom: 12px; }
+}
 @media (max-width: 760px) {
-  .cover-menu-toggle { left: 6%; }
+  .site-header .wordmark { position: absolute; left: 50%; transform: translateX(-50%); text-align: center; }
   .cover-menu-toggle .menu-label { display: none; }
   .hero-topline { top: 35px; left: 80px; right: 6%; justify-content: flex-end; font-size: 6px; letter-spacing: 1px; }
   .hero-topline > span:first-child { margin-left: 0; }
@@ -281,16 +303,16 @@ a.breadcrumb { font-family: var(--serif); font-size: 26px; font-weight: 500; let
 .hero-bottom .scroll-cue > .scroll-cue-arrow { width: 38px; height: 38px; display: grid; place-items: center; font: 22px var(--sans); letter-spacing: 0; border: 1px solid #f4f0e770; border-radius: 50%; }
 .next-photo { background: transparent; }
 .dish-food-hero::after { display: none; }
-.student-work-section { padding: 55px 0 80px; border-top: 1px solid var(--line); }
-.student-work-section > h2 { margin: 0 6% 35px; font-family: var(--serif); font-size: clamp(44px, 5vw, 72px); line-height: 1; letter-spacing: -1.5px; color: var(--rust); }
+.student-demo-section { padding: 55px 0 80px; border-top: 1px solid var(--line); }
+.student-demo-section > h2 { margin: 0 6% 35px; font-family: var(--serif); font-size: clamp(44px, 5vw, 72px); line-height: 1; letter-spacing: -1.5px; color: var(--rust); }
 @media (max-width: 760px) {
   .cover-divider { gap: 14px; padding: 13px 5%; min-height: 45px; }
   .cover-divider span { font-size: 6px; letter-spacing: 1px; }
   .cover-divider i { font-size: 13px; }
   .hero-bottom .scroll-cue > span.scroll-cue-label { font-size: 7px; letter-spacing: 1.1px; }
   .hero-bottom .scroll-cue > .scroll-cue-arrow { width: 36px; height: 36px; }
-  .student-work-section { padding: 40px 0 55px; }
-  .student-work-section > h2 { margin-bottom: 26px; }
+  .student-demo-section { padding: 40px 0 55px; }
+  .student-demo-section > h2 { margin-bottom: 26px; }
 }
 
 /* Let the drawer and its backdrop arrive together, without a sudden dimming. */

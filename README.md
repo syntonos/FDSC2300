@@ -88,16 +88,19 @@ description: Citrus curd in a crisp pastry shell.
 technique: Custards & coagulation
 skills: [Protein Coagulation, Temperature Control, Pastry]
 duration: 90 minutes + cooling
+ingredients: [Pastry shell, Citrus juice and zest, Eggs, Sugar, Butter]
 team: FDSC 2300 kitchen
 ```
 
 Use `past` or `upcoming` for `status`. The date determines sorting and year grouping; `category` drives the dropdown. Skills appear beneath dish titles, separated by dots. If omitted, the technique provides fallback labels.
 
+The optional `ingredients` list appears below **Expected time** on the dish page. Each entry can include a quantity, such as `200 g flour`; edit these entries to match the assigned recipe.
+
 The opening image is food-only. For an image with an unwanted decorative edge, optional `imageInset` crops a percentage from its edges without changing the source file (the salmon cover uses `5`).
 
-### Student work
+### Student demo
 
-The student-work carousel is the last section of each dish page. Add actual photographs and credits with an optional `gallery` array:
+The **Student demo** carousel appears after each dish's notes and before **More dishes**. Add actual photographs and credits with an optional `gallery` array:
 
 ```yaml
 gallery:

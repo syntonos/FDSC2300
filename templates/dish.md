@@ -9,6 +9,9 @@ description: A short description of the dish.
 technique: Heat transfer
 skills: [Heat Transfer, Temperature Control]
 duration: 45 minutes
+ingredients:
+  - First ingredient and quantity
+  - Second ingredient and quantity
 team: FDSC 2300 kitchen
 ---
 

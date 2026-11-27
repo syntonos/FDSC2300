@@ -32,7 +32,9 @@ export function useScrollEffects(route: string) {
             const speed = Number(layer.dataset.layerSpeed);
             const limit = Number(innerWidth <= 760 ? layer.dataset.layerLimitMobile : layer.dataset.layerLimit);
             const offset = Math.max(-limit, Math.min(limit, distance * speed));
-            layer.style.transform = `translate3d(0, ${offset.toFixed(2)}px, 0)`;
+            const horizontalLimit = innerWidth <= 760 ? 8 : 14;
+            const horizontalOffset = Math.max(-horizontalLimit, Math.min(horizontalLimit, distance * Number(layer.dataset.layerSpeedX || 0)));
+            layer.style.transform = `translate3d(${horizontalOffset.toFixed(2)}px, ${offset.toFixed(2)}px, 0)`;
           });
         }
       }
