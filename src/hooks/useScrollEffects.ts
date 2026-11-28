@@ -6,7 +6,7 @@ export function useScrollEffects(route: string) {
     const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const images = [...document.querySelectorAll<HTMLElement>('[data-parallax]')];
     const collage = document.querySelector<HTMLElement>('[data-about-collage]');
-    const layers = [...document.querySelectorAll<HTMLElement>('[data-parallax-layer]')];
+    const layers = [...(collage?.querySelectorAll<HTMLElement>('[data-parallax-layer]') ?? [])];
     const cards = [...document.querySelectorAll<HTMLElement>('[data-dish-parallax] .dish-card')];
     let frame = 0;
     const update = () => {
@@ -26,16 +26,11 @@ export function useScrollEffects(route: string) {
       }
       if (collage) {
         const rect = collage.getBoundingClientRect();
-        if (rect.bottom > -100 && rect.top < innerHeight + 100) {
-          const distance = innerHeight / 2 - rect.top - rect.height / 2;
-          layers.forEach(layer => {
-            const speed = Number(layer.dataset.layerSpeed);
-            const limit = Number(innerWidth <= 760 ? layer.dataset.layerLimitMobile : layer.dataset.layerLimit);
-            const offset = Math.max(-limit, Math.min(limit, distance * speed));
-            const horizontalLimit = innerWidth <= 760 ? 8 : 14;
-            const horizontalOffset = Math.max(-horizontalLimit, Math.min(horizontalLimit, distance * Number(layer.dataset.layerSpeedX || 0)));
-            layer.style.transform = `translate3d(${horizontalOffset.toFixed(2)}px, ${offset.toFixed(2)}px, 0)`;
-          });
+        const progress = 1 - 2 * (rect.top + rect.height) / (innerHeight + rect.height);
+        const travel = Math.max(-1, Math.min(1, progress)) * (innerWidth <= 760 ? .7 : 1);
+        for (const layer of layers) {
+          const offset = travel * Number(layer.dataset.parallaxLayer);
+          layer.style.transform = `translate3d(0, ${offset.toFixed(2)}px, 0)`;
         }
       }
       const speeds = [-.075, .055, -.1];
@@ -53,9 +48,11 @@ export function useScrollEffects(route: string) {
     window.addEventListener('scroll', schedule, { passive: true });
     window.addEventListener('resize', schedule);
     motion.addEventListener('change', schedule);
-    document.fonts.ready.then(schedule);
+    let active = true;
+    document.fonts?.ready.then(() => { if (active) schedule(); });
     schedule();
     return () => {
+      active = false;
       cancelAnimationFrame(frame);
       window.removeEventListener('scroll', schedule);
       window.removeEventListener('resize', schedule);
