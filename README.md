@@ -11,7 +11,7 @@ npm ci --cache /tmp/fdsc2300-npm-cache
 npm run dev
 ```
 
-The development server listens on port 3000. In this cloud environment, use the existing `/workspace/FDSC2300` checkout; each task is already isolated and does not need a Git worktree.
+The development server listens on port 3000. Run these commands from the repository root.
 
 ```sh
 npm run check        # TypeScript, frontmatter, routes, and image references
@@ -66,6 +66,20 @@ src/
 scripts/                  # Content validation, route generation, offline preview
 templates/                # Copyable Markdown starters
 ```
+
+## Common updates
+
+| To change | Edit |
+| --- | --- |
+| Cover labels and divider words | `content/pages/home.md` |
+| Mise en Place resources | `content/pages/mise-en-place.md` |
+| Class notes | Copy the note template in `templates/` into `content/notes/` |
+| Menu and dish archive entries | Copy `templates/dish.md` into `content/dishes/<year>/` |
+| Course name, address, and contacts | `content/settings/site.md` |
+| Cover typography and footer colors | `src/styles/global.css` |
+| Mise en Place and Notes widths | The shared reading layout in `src/styles/components.css` |
+
+Run `npm run check` after editing Markdown or moving images. It checks frontmatter, routes, and image references.
 
 ## Edit pages and links
 

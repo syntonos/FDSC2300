@@ -19,7 +19,7 @@ function ResolvedDish({ dish }: { dish: Dish }) {
   const back = dish.status === 'past' ? '/past-dishes/' : '/menu/';
   const related = content.dishes.filter(other => other.id !== dish.id && other.status === dish.status).slice(0, 3);
   return <>
-    <article className="dish-detail"><div className="dish-detail-heading"><Link className="breadcrumb" to={back}>← {dish.status === 'past' ? 'Past dishes' : 'Menu'}</Link><p className="eyebrow">{dish.category} <span> / </span> {formatDate(dish.date)}</p><h1>{dish.title}</h1><p>{dish.description}</p><SkillLine skills={dish.skills} technique={dish.technique} /></div>
+    <article className="dish-detail"><div className="dish-detail-heading"><Link className="breadcrumb" to={back}>← {dish.status === 'past' ? 'Past dishes' : 'Menu'}</Link><p className="eyebrow">{formatDate(dish.date)}</p><h1>{dish.title}</h1><p>{dish.description}</p><SkillLine skills={dish.skills} technique={dish.technique} /></div>
       <div className="detail-image dish-food-hero"><FoodImage image={dish.image} alt={dish.imageAlt} inset={dish.imageInset} loading="eager" priority /></div>
       <div className="dish-story"><aside><dl><dt>Technique</dt><dd>{dish.technique}</dd><dt>Expected time</dt><dd>{dish.duration}</dd>{dish.ingredients.length > 0 && <><dt>Ingredients</dt><dd><ul className="dish-ingredients">{dish.ingredients.map((ingredient, index) => <li key={`${index}-${ingredient}`}>{ingredient}</li>)}</ul></dd></>}</dl></aside><Markdown>{dish.body}</Markdown></div>
     </article>

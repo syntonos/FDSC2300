@@ -207,7 +207,7 @@ html::-webkit-scrollbar-thumb:hover, .site-menu::-webkit-scrollbar-thumb:hover, 
 .cover-menu-toggle .menu-icon i { width: 22px; height: 1.5px; }
 .cover-menu-toggle .menu-label { font-size: 9px; letter-spacing: 1.6px; text-transform: uppercase; }
 .cover-menu-toggle:hover .menu-icon { background: var(--paper); color: var(--rust); }
-.hero-cover .hero-topline { top: var(--cover-menu-inset); left: calc(var(--cover-menu-inset) + 60px); min-height: 48px; align-items: center; font-size: clamp(14px, 1.3vw, 20px); }
+.hero-cover .hero-topline { top: var(--cover-menu-inset); left: calc(var(--cover-menu-inset) + 60px); min-height: 48px; align-items: center; font-size: clamp(19px, 2vw, 29px); }
 .hero-cover .hero-topline > span:first-child { margin-left: 0; }
 .menu-top { justify-content: flex-start; gap: 12px; }
 .menu-close { flex: 0 0 42px; }
@@ -239,7 +239,7 @@ html::-webkit-scrollbar-thumb:hover, .site-menu::-webkit-scrollbar-thumb:hover, 
   .site-header .wordmark small { font-size: clamp(10px, 3vw, 14px); margin-left: 5px; }
   .menu-bottom p.menu-contacts { font-size: clamp(14px, 4vw, 20px); }
   .cover-menu-toggle .menu-label { display: none; }
-  .hero-cover .hero-topline { justify-content: flex-start; font-size: 13px; letter-spacing: 1px; }
+  .hero-cover .hero-topline { justify-content: flex-start; font-size: clamp(16px, 4.5vw, 22px); letter-spacing: 1px; }
   .hero-topline > span:first-child { margin-left: 0; }
   .cornell-logo { margin-bottom: 18px; }
   .menu-bottom .menu-university > p { font-size: 9px; }
@@ -257,14 +257,14 @@ html::-webkit-scrollbar-thumb:hover, .site-menu::-webkit-scrollbar-thumb:hover, 
 .hero-bottom .scroll-cue > span { display: grid; }
 .hero-bottom .scroll-cue > span:first-child { writing-mode: horizontal-tb; font-size: 22px; letter-spacing: 0; }
 .about-copy .prose { max-width: 400px; font-size: 14px; }
-.site-footer { padding: 38px 6%; font-family: var(--serif); text-transform: uppercase; }
+.site-footer { padding: 38px 6%; border-top: 1px solid var(--line); background: var(--paper); color: var(--rust); font-family: var(--serif); text-transform: uppercase; }
 .footer-brand { font-size: clamp(32px, 3.2vw, 44px); }
 .footer-brand small { font-size: clamp(12px, 1.3vw, 16px); }
 .footer-bottom { grid-template-columns: 1fr auto; align-items: center; padding-top: 0; }
 .footer-bottom nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px clamp(14px, 2vw, 26px); font-size: clamp(15px, 1.4vw, 20px); }
 .resource-layout { display: block; padding-top: 40px; }
-.resource-content { max-width: 780px; }
 .page-heading .breadcrumb { margin-bottom: 40px; }
+.page-heading .page-description, .dish-detail-heading > p:not(.eyebrow, .dish-skills) { font-family: var(--serif); font-size: clamp(26px, 3vw, 42px); line-height: 1.2; }
 .archive-count { text-transform: none; letter-spacing: .5px; }
 @media (max-width: 760px) {
   .hero-topline > span:first-child { margin-left: 0; }
@@ -277,7 +277,6 @@ html::-webkit-scrollbar-thumb:hover, .site-menu::-webkit-scrollbar-thumb:hover, 
 }
 
 /* A fine ruled strip beneath the cover. */
-.cover-divider { height: 20px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--paper); }
 .dish-card p.dish-skills, .dish-skills {
   margin: 10px 0 0;
   max-width: none;
@@ -296,7 +295,6 @@ html::-webkit-scrollbar-thumb:hover, .site-menu::-webkit-scrollbar-thumb:hover, 
 a.breadcrumb { font-family: var(--serif); font-size: 26px; font-weight: 500; letter-spacing: 0; text-transform: none; line-height: 1.25; color: var(--rust); }
 .featured-grid .dish-card { transform: translate3d(0, var(--dish-drift, 0px), 0); }
 @media (max-width: 760px) {
-  .cover-divider { height: 14px; }
   a.breadcrumb { font-size: 24px; }
   .footer-tagline { padding: 30px 6%; }
   .footer-tagline p { font-size: 28px; }
@@ -307,8 +305,8 @@ a.breadcrumb { font-family: var(--serif); font-size: 26px; font-weight: 500; let
 }
 
 /* Quiet editorial cues between the cover and the class content. */
-.cover-divider { min-height: 52px; height: auto; display: flex; align-items: center; justify-content: center; gap: 36px; padding: 15px 6%; }
-.cover-divider span { font-size: 8px; font-weight: 500; line-height: 1.5; text-transform: uppercase; letter-spacing: 1.8px; color: var(--rust); }
+.cover-divider { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px clamp(8px, 2.5vw, 36px); padding: 15px 5%; border-block: 1px solid var(--line); background: var(--paper); }
+.cover-divider span { font-size: clamp(12px, 1.6vw, 20px); font-weight: 500; line-height: 1.5; text-transform: uppercase; letter-spacing: 1.8px; color: var(--rust); }
 .cover-divider i { font-family: var(--serif); font-size: 18px; font-style: normal; line-height: 1; color: #9c806b; }
 .hero-bottom .scroll-cue { gap: 14px; align-items: center; }
 .hero-bottom .scroll-cue > span.scroll-cue-label { width: auto; height: auto; border: 0; border-radius: 0; background: none; display: inline; font: 13px var(--serif); letter-spacing: 1.5px; text-transform: uppercase; white-space: nowrap; }
@@ -318,8 +316,8 @@ a.breadcrumb { font-family: var(--serif); font-size: 26px; font-weight: 500; let
 .student-demo-section { padding: 55px 0 80px; border-top: 1px solid var(--line); }
 .student-demo-section > h2 { margin: 0 6% 35px; font-family: var(--serif); font-size: clamp(44px, 5vw, 72px); line-height: 1; letter-spacing: -1.5px; color: var(--rust); }
 @media (max-width: 760px) {
-  .cover-divider { gap: 14px; padding: 13px 5%; min-height: 45px; }
-  .cover-divider span { font-size: 6px; letter-spacing: 1px; }
+  .cover-divider { padding-block: 13px; }
+  .cover-divider span { letter-spacing: 1px; }
   .cover-divider i { font-size: 13px; }
   .hero-bottom .scroll-cue > span.scroll-cue-label { font-size: 11px; letter-spacing: 1.1px; }
   .hero-bottom .scroll-cue > .scroll-cue-arrow { width: 36px; height: 36px; }
