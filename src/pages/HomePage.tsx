@@ -31,8 +31,8 @@ export function HomePage() {
     <div className="cover-divider">{words.map((word, index) => <Fragment key={word}><span>{word}</span>{index < words.length - 1 && <i aria-hidden="true">·</i>}</Fragment>)}</div>
     <section id="about" className="about-section section-pad">
       <div className="about-art" data-about-collage>
-        <div className="green-block green-back" data-parallax-layer="80"><img src={assetUrl('/images/library/vegetables/market-greens.jpg')} alt="" loading="lazy" /></div>
-        <div className="green-block green-front" data-parallax-layer="-60"><img src={assetUrl('/images/dishes/grains/noodle-bowl/cover.jpg')} alt="" loading="lazy" /></div>
+        <div className="green-block green-back" data-parallax-layer="80" />
+        <div className="green-block green-front" data-parallax-layer="-60" />
         <div className="about-photo" data-parallax-layer="30"><img src={assetUrl(home.aboutImage!)} alt={home.aboutImageAlt || 'Seasonal ingredients'} loading="lazy" width={900} height={1100} /></div>
       </div>
       <div className="about-copy"><h2>{home.introTitle || 'About the class.'}</h2><Markdown>{home.body}</Markdown><Link className="text-link" to="/mise-en-place/">Class resources <span>↗</span></Link></div>

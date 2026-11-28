@@ -84,7 +84,7 @@ export function SiteLayout() {
     <a href="#main" className="skip-link" onClick={event => { event.preventDefault(); main.current?.focus(); }}>Skip to content</a>
     <header ref={header} className={`site-header${isHome ? ' cover-header' : ''}${headerVisible ? ' is-visible' : ''}`}>
       <MenuButton open={open} onOpen={openMenu} />
-      <Link className="header-center" to="/">{settings.institution.toUpperCase()}</Link>
+      <Link className="header-cals" to="/" aria-label="Cornell CALS home"><img src="https://cals.cornell.edu/sites/default/files/2019-08/horizontal-wordmark_color-web.png" alt="Cornell CALS" /></Link>
       <Link className="wordmark" to="/" aria-label="FDSC 2300 home">FDSC <span>2300</span><small>CULINARY SCIENCE</small></Link>
     </header>
     <div className="menu-backdrop" aria-hidden="true" onClick={closeMenu} />
