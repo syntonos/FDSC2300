@@ -85,12 +85,19 @@ export function SiteLayout() {
     <header ref={header} className={`site-header${isHome ? ' cover-header' : ''}${headerVisible ? ' is-visible' : ''}`}>
       <MenuButton open={open} onOpen={openMenu} />
       <Link className="wordmark" to="/" aria-label="FDSC 2300 home">FDSC <span>2300</span><small>CULINARY SCIENCE</small></Link>
+      <svg className="header-logo-filter" width="0" height="0" aria-hidden="true">
+        <filter id="cals-ink" colorInterpolationFilters="sRGB">
+          <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -1 0 0 1 0" result="lettering" />
+          <feFlood floodColor="currentColor" />
+          <feComposite in2="lettering" operator="in" />
+        </filter>
+      </svg>
       <Link className="header-cals" to="/" aria-label="Cornell CALS home"><img src="https://cals.cornell.edu/sites/default/files/2019-08/horizontal-wordmark_color-web.png" alt="Cornell CALS" /></Link>
     </header>
     <div className="menu-backdrop" aria-hidden="true" onClick={closeMenu} />
     <aside ref={panel} id="site-menu" className="site-menu" aria-label="Main navigation">
       <div className="menu-top"><button ref={closeButton} className="menu-close" aria-label="Close navigation" onClick={closeMenu}>✕</button><Link to="/" onClick={closeMenu}>{settings.course}</Link></div>
-      <nav>{links.map(link => <NavLink key={link.title} href={link.href} onClick={closeMenu}><span>{link.title}</span></NavLink>)}</nav>
+      <nav>{links.map((link, index) => <NavLink key={link.title} href={link.href} onClick={closeMenu}><small aria-hidden="true">{String(index + 1).padStart(2, "0")}</small><span>{link.title}</span></NavLink>)}</nav>
       <div className="menu-bottom"><div className="menu-university"><a className="cornell-logo" href="https://www.cornell.edu/" target="_blank" rel="noopener noreferrer"><img src={assetUrl('/images/brand/cornell-university-white.svg')} alt={settings.institution} width={245} height={62} /></a><p>{settings.address.map(line => <span key={line}>{line}<br /></span>)}</p></div><p className="menu-contacts">contact<br />{settings.contacts.map(contact => <span key={contact.email}><a href={`mailto:${contact.email}`}>{contact.email}</a><br /></span>)}</p></div>
     </aside>
     <main ref={main} id="main" tabIndex={-1}><Outlet /></main>
